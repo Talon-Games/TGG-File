@@ -1,1 +1,1 @@
-#Talon Games Game File Format (TGG)
+# Talon Games Game File Format (TGG)
