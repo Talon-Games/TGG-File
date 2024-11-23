@@ -30,19 +30,18 @@ _Checksum's are in Little Endian_
 
 ## Metadata
 
-| Component          | Length (In Bytes) | Type     |
-| ------------------ | ----------------- | -------- |
-| Title              | Variable          | C-String |
-| Description        | Variable          | C-String |
-| Author             | Variable          | C-String |
-| Creation Date      | 4                 | Integer  |
-| Edit Date          | 4                 | Integer  |
-| Game Data Checksum | 2                 | Integer  |
+| Component          | Length (In Bytes) | Type               |
+| ------------------ | ----------------- | ------------------ |
+| Title              | Variable          | C-String           |
+| Description        | Variable          | C-String           |
+| Author             | Variable          | C-String           |
+| Creation Date      | 4                 | Integer Big Endian |
+| Game Data Checksum | 2                 | Integer            |
 
 ```txt
-+-------+-------------+--------+---------------+-----------+--------------------+
-| Title | Description | Author | Creation Date | Edit Date | Game Data Checksum |
-+-------+-------------+--------+---------------+-----------+--------------------+
++-------+-------------+--------+---------------+--------------------+
+| Title | Description | Author | Creation Date | Game Data Checksum |
++-------+-------------+--------+---------------+--------------------+
 ```
 
 ## Game Data
@@ -85,7 +84,7 @@ _Checksum's are in Little Endian_
 | Component | Length (In Bytes) | Type   | Description                                                                                                |
 | --------- | ----------------- | ------ | ---------------------------------------------------------------------------------------------------------- |
 | Number    | 1                 | Byte   | The clue the word coresponds with, only included if the box has the first letter of a word, otherwise 0x00 |
-| Letter    | 1                 | String | Uppercase ASCII Letter                                                                                     |
+| Letter    | 1                 | String | Uppercase ASCII Letter # (0x23) for solid, " " (0x20)                                                      |
 
 ```txt
 +--------+--------+
