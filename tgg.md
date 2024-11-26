@@ -67,16 +67,15 @@ _Checksum's are in Little Endian_
 
 #### Clue
 
-| Component | Length (In Bytes) | Type     | Description                            |
-| --------- | ----------------- | -------- | -------------------------------------- |
-| Number    | 1                 | Byte     | The word the clue coresponds with      |
-| Direction | 1                 | Byte     | 0x01 for vertical, 0x02 for horizontal |
-| Clue      | Variale           | C-String | Actual clue                            |
+| Component | Length (In Bytes) | Type     | Description                       |
+| --------- | ----------------- | -------- | --------------------------------- |
+| Number    | 1                 | Byte     | The word the clue coresponds with |
+| Clue      | Variale           | C-String | Actual clue                       |
 
 ```txt
-+--------+-----------+------+
-| Number | Direction | Clue |
-+--------+-----------+------+
++--------+------+
+| Number | Clue |
++--------+------+
 ```
 
 #### Crossword Box
