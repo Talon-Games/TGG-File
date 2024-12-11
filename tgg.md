@@ -10,22 +10,20 @@ _Checksum's are in Little Endian_
 
 | Component     | Length (In Bytes) | Type    | Description                     |
 | ------------- | ----------------- | ------- | ------------------------------- |
-| Version       | 5                 | String  | File Version, current 0.1.0     |
 | ID            | 14                | String  | Always: TalonGamesGame          |
 | Game          | 1                 | Byte    | The type of game that is stored |
 | File Checksum | 2                 | Integer | TODO                            |
 
 ### Game
 
-| Name        | Byte |
-| ----------- | ---- |
-| Crossword   | 0x01 |
-| Word Search | 0x02 |
+| Name      | Byte |
+| --------- | ---- |
+| Crossword | 0x01 |
 
 ```txt
-+---------+----------------+------+---------------+
-| version | TalonGamesGame | Game | File Checksum |
-+---------+----------------+------+---------------+
++----------------+------+---------------+
+| TalonGamesGame | Game | File Checksum |
++----------------+------+---------------+
 ```
 
 ## Metadata
