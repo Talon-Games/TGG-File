@@ -16,9 +16,10 @@ _Checksum's are in Little Endian_
 
 ### Game
 
-| Name      | Byte |
-| --------- | ---- |
-| Crossword | 0x01 |
+| Name        | Byte |
+| ----------- | ---- |
+| Crossword   | 0x01 |
+| Word Ladder | 0x02 |
 
 ```txt
 +----------------+------+---------------+
@@ -122,6 +123,31 @@ Crossword
 +-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
 | 0x01 0x43 | 0x00 0x41 | 0x02 0x54 | 0x00 0x23 | 0x00 0x23 | 0x00 0x41 | 0x00 0x23 | 0x00 0x23 | 0x00 0x42 |
 +-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+```
+
+### Word Ladder
+
+| Component         | Length (In Bytes) | Type     | Description                                   |
+| ----------------- | ----------------- | -------- | --------------------------------------------- |
+| Starting Word     | Variable          | C-String | The word at the top of the ladder             |
+| Starting Word Def | Variable          | C-String | The deffinition or hint for the word          |
+| Ending Word       | Variable          | C-String | The word at the bottom of the ladder          |
+| Ending Word Def   | Variable          | C-String | The deffinition or hint for the word          |
+| Step Count        | 1                 | Byte     | The amount of words between the start and end |
+| Step              | Variable          | Step     | Step Count amount of steps                    |
+
+#### Step
+
+| Component | Length (In Bytes) | Type     | Description           |
+| --------- | ----------------- | -------- | --------------------- |
+| Word      | Variable          | C-String | The word in the step  |
+| Hint      | Variable          | C-String | The hint for the step |
+| 0x00      | 1                 | Byte     | Divides steps         |
+
+```
++------+------+------+
+| Word | Hint | 0x00 |
++------+------+------+
 ```
 
 ## Footer
